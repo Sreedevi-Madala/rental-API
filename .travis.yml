@@ -1,0 +1,37 @@
+language: node_js
+node_js:
+- '8'
+dist: trusty
+services:
+- mongodb
+env:
+- db='mongodb://127.0.0.1:27017/movie_ci'
+cache:
+  directories:
+  - node_modules
+install:
+- npm install
+script:
+- nohup npm run start &
+- sleep 3
+- npm run test
+notifications:
+  email:
+    recipients:
+    - moogunjung@gmail.com
+    on_success: always
+    on_failure: always
+deploy:
+  provider: heroku
+  api_key:
+    secure: qyw+Mml4nngiPnxGfK+nroEnaH6PfN/kGNvkJqUyxprccXgq0OZNk0FnPuDCGOMOFAXFt01sf707
+IBN2HuNwSWMSLpVZUjfh55fr/ccSYjDQaG7dTk9ToBl/Tppx0UJb0O0yDAv0alN2B0VZ9NSqVQKitkWsT3tjhX3
+pB6p0ERPwnjQ3FnNKNx9bty7xwMhNBuU26Z1P6EE/BD384HQjXEjgHDumnbiqt2HKwRhjwqKhRI0tJdhmK0LniH
+88N7rqsTDmVdSXc3VO4G/CEbSnGe162vo4xq8LHVCmZ2kkR3bcRmCKMVVsYguHpC2q27YGKF20FYahdRFhPY3h/
+ldY68aaUd46qGNJ16Lc/fzuKXdRDOd0Nq9jJsnlmyMV5J5pjQa2zEh2EDK2UGGu/f2Rc+wGBZVK3mMG5dgrC3TC
+ohcD7DQnvUVYxR0O06/VrvZ/gjXvG2Mfy5waYvujbQM5j8uEdgCx9MBmFqamPv97STcO5uiXPNI82twZEjmdLYz
+oZyaJPpO2ELSeEhgt/CJolX49UqWan3b7PVogY8VOAhla+VyO7Ed30qeh5nuoZER0H143xvV0LaEMCj/EwtBws0
+F5ALBdUbEc93l+LXY4u3LQdB1/ZciWYnXtgGiu1nNrEDcqarUpsiGZJ0u1jvRjD8KFTt6oK3ZhfULiicVe7wM=
+  app: morning-mesa-94967
+  on:
+    repo: Moogun/item-Rental-REST-API

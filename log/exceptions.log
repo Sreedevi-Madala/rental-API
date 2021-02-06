@@ -1,0 +1,6 @@
+2018-10-23 15:44:20 [31merror[39m: uncaughtException: an error thrown for a test
+Error: an error thrown for a test
+    at Timeout.setTimeout [as _onTimeout] (/Users/moogunjung/Downloads/item/index.js:18:11)
+    at ontimeout (timers.js:498:11)
+    at tryOnTimeout (timers.js:323:5)
+    at Timer.listOnTimeout (timers.js:290:5)
